@@ -1,0 +1,252 @@
+html,
+body {
+    margin: 0;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.map {
+    width: 1000px;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -40%) scale(0.7);
+    transition: ease all .3s;
+}
+
+.map-svg {
+    fill: gray;
+    stroke: white;
+    stroke-width: 2;
+    height: 948px;
+    width: 1000px;
+}
+
+
+/* navigation header */
+.nav {
+    background-color: gray;
+    height: 40px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-butt-cont {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+}
+
+.nav-butt {
+    background-color: gray;
+    text-align: center;
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    border: 0;
+}
+
+.nav-butt:hover {
+    background-color: rgb(202, 202, 202);
+    transition: 0.3s;
+}
+
+.change .bar1 {
+    transition: 0.4s;
+    transform: translate(0, 11px) rotate(-45deg);
+}
+
+.change .bar2 {
+    transition: 0.4s;
+    opacity: 0;
+}
+
+.change .bar3 {
+    transition: 0.4s;
+    transform: translate(0, -11px) rotate(45deg);
+}
+
+.change .dropdown {
+    visibility: inherit;
+}
+
+.dropdown-item:hover {
+    transition: 0.3s;
+    transform: scale(1.1);
+    background-color: rgb(204, 204, 204);
+}
+
+.dropdown {
+    overflow: hidden;
+    visibility: hidden;
+    float: right;
+    background-color: gray;
+    position: absolute;
+    top: 60px;
+    right: 0px;
+    color: white;
+    z-index: 10;
+}
+
+.dropdown-item {
+    text-align: center;
+    padding: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 10px;
+}
+
+/* modal window */
+.modal-window {
+    position: absolute;
+    background-color: rgba(128, 128, 128, 0.8);
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.5s;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.exit {
+    position: absolute;
+    z-index: 1;
+    right: 8%;
+    top: 8%;
+    margin: 10px;
+    background-color: gray;
+    width: 40px;
+    height: 40px;
+    border-radius: 20%;
+}
+
+.exit:hover {
+    background-color: orange;
+}
+
+.map path:hover {
+    fill: orange !important;
+    transition: 0.3s;
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    border-radius: 5%;
+}
+
+@media only screen and (max-width: 750px) {
+    .map {
+        transform: translate(50%, -50%) scale(0.5);
+    }
+
+    .nav-butt {
+        display: none
+    }
+
+    .burger {
+        display: inline-block
+    }
+
+    .bar1,
+    .bar2,
+    .bar3 {
+        transition: 0.3s;
+    }
+}
+
+#map-leaflet {
+    height: 90%;
+    width: 90%;
+    z-index: 0;
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 8px 24px 0px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 0px 8px 24px 0px rgba(66, 68, 90, 1);
+    box-shadow: 0px 8px 24px 0px rgba(66, 68, 90, 1);
+}
+
+/* filter */
+input[type=text],
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.filter-cont {
+    position: relative;
+    padding: 10px;
+    visibility: hidden;
+}
+
+.filter {
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: gray;
+    -webkit-box-shadow: 0px 8px 24px 0px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 0px 8px 24px 0px rgba(66, 68, 90, 1);
+    box-shadow: 0px 8px 24px 0px rgba(66, 68, 90, 1);
+}
+
+.filter-butt {
+    background-color: gray;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+    border: 0;
+    width: 100%;
+}
+
+.filter-butt:hover {
+    background-color: rgb(202, 202, 202);
+    transition: 0.3s;
+}
