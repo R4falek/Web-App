@@ -1,48 +1,94 @@
-const [districts] = document.getElementsByClassName("map-svg");
-const [modalWindow] = document.getElementsByClassName("modal-window");
-const [filter] = document.getElementsByClassName("filter-cont");
-const [filterButton] = document.getElementsByClassName("filter-butt")
-
-function clickDistrict(district) {
-  district.style.fill = "red";
-  modalWindow.style.opacity = "1";
-  modalWindow.style.pointerEvents = "all";
-  map.setView([49.858333, 20.270556], 10);
+function scrollToSection(sectionId, burger) {
+  const section = document.getElementById(sectionId);
+  section.scrollIntoView({ behavior: "smooth" });
+  if(burger)
+    burgerMenuTogglerFun();
 }
 
-function clickExit() {
-  for (let i = 0; i < 16; i++) {
-    districts.children[i].setAttribute("style", "fill: gray");
+let fly = document.querySelector(".main-site-title-fly");
+fly.style.filter = "blur(3px)";
+fly.style.top = "30vh" 
+
+
+function getSectionPosition(section) {
+  var section = document.querySelector(section);
+  var topPosition = section.getBoundingClientRect().top;
+  return topPosition;
+}
+
+let mainMenuBut = document.querySelector('#main')
+let offerMenuBut = document.querySelector('#offer')
+let recommendMenuBut = document.querySelector('#recommend')
+let contactMenuBut = document.querySelector('#contact')
+
+function resetMenuButtonsStyle(){
+  mainMenuBut.style.color = "#000000";
+  offerMenuBut.style.color = "#000000";
+  recommendMenuBut.style.color = "#000000";
+  contactMenuBut.style.color = "#000000";
+  mainMenuBut.style.textDecoration = "none";
+  offerMenuBut.style.textDecoration = "none";
+  recommendMenuBut.style.textDecoration = "none";
+  contactMenuBut.style.textDecoration = "none";
+}
+
+function hoverMenuButton(element){
+  element.style.color = "#F4981C";
+  element.style.textDecoration = "underline";
+  element.style.textUnderlineOffset = "0.2em";
+}
+
+function scrollEventsHandler(){
+  if(getSectionPosition('.main-site') <= -20){
+    document.querySelector(".nav").style.pointerEvents = "none";
+    document.querySelector(".nav").style.opacity = 0;
+    document.querySelector(".nav-bottom").style.pointerEvents = "all";
+    document.querySelector(".nav-bottom").style.opacity = 1;
   }
-  modalWindow.style.opacity = "0";
-  modalWindow.style.pointerEvents = "none";
+  else{
+    document.querySelector(".nav-bottom").style.pointerEvents = "none";
+    document.querySelector(".nav-bottom").style.opacity = 0;
+    document.querySelector(".nav").style.pointerEvents = "all";
+    document.querySelector(".nav").style.opacity = 1;
+  }
+  if(getSectionPosition('.main-site') <= -100){
+    document.querySelector(".background").style.filter = "blur(8px)"
+  }
+  else{
+    document.querySelector(".background").style.filter = "blur(0px)"
+  }
+  resetMenuButtonsStyle()
+  hoverMenuButton(mainMenuBut)
+  if(getSectionPosition(".offer-site") <= 0){
+    resetMenuButtonsStyle()
+    hoverMenuButton(offerMenuBut)
+  }
+  if(getSectionPosition(".recomendations-site") <= 0){
+    resetMenuButtonsStyle()
+    hoverMenuButton(recommendMenuBut)
+  }
+  if(getSectionPosition(".contact-site") <= 0){
+    resetMenuButtonsStyle()
+    hoverMenuButton(contactMenuBut)
+  }
 }
 
-function burgerToggler(x) {
-    x.classList.toggle("change");
-}
+window.addEventListener("scroll", scrollEventsHandler);
 
-var map = L.map('map-leaflet').setView([49.858333, 20.270556], 10);
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-}).addTo(map);
 
-var marker = new L.Marker([49.858333, 20.270556]);
-marker.bindPopup("Opis").openPopup();
-marker.addTo(map)
-
-function formSubmit(){
-  filterToggler(filterButton)
-};
-
-function filterToggler(){
-  if (filterButton.innerHTML == "X"){
-    filterButton.innerHTML = "Filtr"
-    filter.style.visibility = "hidden"
+ let burgerMenuToggler = false;
+ let dropMenu = document.querySelector(".dropdown")
+function burgerMenuTogglerFun() {
+  scrollEventsHandler()
+  document.querySelectorAll(".burger").forEach(e => e.classList.toggle("change"));
+  if(burgerMenuToggler){
+    burgerMenuToggler = false;
+    dropMenu.style.opacity = 0;
+    dropMenu.style.pointerEvents = 'none';
   }
   else {
-    filterButton.innerHTML = "X"
-    filter.style.visibility = "inherit"
+    burgerMenuToggler = true;
+    dropMenu.style.opacity = 1;
+    dropMenu.style.pointerEvents = 'inherit';
   }
 }
