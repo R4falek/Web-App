@@ -1,0 +1,114 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.6058867,
+          50.84020940000001
+        ]
+      },
+      "properties": {
+        "path": "koszykowka_arek kom,jan bednarek_kieleckie,no,kielce,no_21.03.2020_cdp_K=34,F=3.txt",
+        "zajecia": "koszykowka",
+        "trener": [
+          "arek kom",
+          "jan bednarek"
+        ],
+        "wojewodztwo": "kieleckie",
+        "gmina": "null",
+        "powiat": "kielce",
+        "budynek": "null",
+        "data": "21.03.2020",
+        "firma": "cdp",
+        "dodatkowe": [
+          "K=34",
+          "F=3"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.9159799,
+          50.0259908
+        ]
+      },
+      "properties": {
+        "path": "koszykowka_arek kom_malopolskie,krakow,krakow,sp40_21.03.2021_cdp_K=34,F=3.txt",
+        "zajecia": "koszykowka",
+        "trener": [
+          "arek kom"
+        ],
+        "wojewodztwo": "malopolskie",
+        "gmina": "krakow",
+        "powiat": "krakow",
+        "budynek": "sp40",
+        "data": "21.03.2021",
+        "firma": "cdp",
+        "dodatkowe": [
+          "K=34",
+          "F=3"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.8994918,
+          50.01141459999999
+        ]
+      },
+      "properties": {
+        "path": "koszykowka_jan bednarek_malopolskie,krakow,krakow,sp53_21.03.2022_cdp_K=34,F=3.txt",
+        "zajecia": "koszykowka",
+        "trener": [
+          "jan bednarek"
+        ],
+        "wojewodztwo": "malopolskie",
+        "gmina": "krakow",
+        "powiat": "krakow",
+        "budynek": "sp53",
+        "data": "21.03.2022",
+        "firma": "cdp",
+        "dodatkowe": [
+          "K=34",
+          "F=3"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.8994918,
+          50.01141459999999
+        ]
+      },
+      "properties": {
+        "path": "tenis_jan bednarek_malopolskie,krakow,krakow,sp53_21.03.2022_cdp_K=34,F=3.txt",
+        "zajecia": "tenis",
+        "trener": [
+          "jan bednarek"
+        ],
+        "wojewodztwo": "malopolskie",
+        "gmina": "krakow",
+        "powiat": "krakow",
+        "budynek": "sp53",
+        "data": "21.03.2022",
+        "firma": "cdp",
+        "dodatkowe": [
+          "K=34",
+          "F=3"
+        ]
+      }
+    }
+  ]
+}
