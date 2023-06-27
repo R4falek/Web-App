@@ -118,6 +118,7 @@ var map = L.map("map").setView([52.237049, 21.017532], 7);
 L.tileLayer(
   "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png",
   {
+    accessToken: "AIzaSyBtJSIrAM50DRRMJ0Wzdx8A4qm7h3wDmPE",
     attribution:
       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   }
